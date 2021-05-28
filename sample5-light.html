@@ -1,3 +1,12 @@
+ <!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>sample5</title>
+
+  <!-- three.jsを読み込む(ローカル) -->
+  <!-- <script src="./three.js"></script> -->
+  <!-- three.jsを読み込む(CDN) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
 
 </head>
@@ -37,7 +46,7 @@ scene.add( sphere2 );
 
 //ドーナッツ
 var torusGeometry = new THREE.TorusGeometry( 1.0, 0.05, 24, 24 );
-var torusMaterial = new THREE. MeshToonMaterial( { color: 0xd66b00 } );
+var torusMaterial = new THREE. MeshToonMaterial( { color: 0xd66b00,wireframe: true } );
 var torus1 = new THREE.Mesh( torusGeometry, torusMaterial );
 var torus2 = new THREE.Mesh( torusGeometry, torusMaterial );
 torus1.position.set( 0, 0, -5);
@@ -66,10 +75,10 @@ scene.add( torus2 );
       torus1.rotation.x += 0.01;
       torus2.rotation.y += 0.01;
 
-      sphere1.position.x += 0.01;
-      sphere1.position.z += 0.01;
-      sphere2.position.x -= 0.01;
-      sphere2.position.z +- 0.01;
+      sphere1.position.x += 0.005;
+      sphere1.position.z += 0.005;
+      sphere2.position.x -= 0.005;
+      sphere2.position.z +- 0.005;
 
 
       renderer.render(scene, camera);
